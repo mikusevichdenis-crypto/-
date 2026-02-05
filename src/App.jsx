@@ -35,7 +35,7 @@ const getORPIndex = (word) => {
   return 4;
 };
 
-const DEMO_TEXT = "Bimp: “правлґнський облґк та склад длЯ ‚иробництва ґ E-commerce. Ђвтоматичний розрахунок собґвартостґ, плануваннЯ запасґв та P&L в однґй системґ. ђозумне плануваннЯ закупґвель: запобґгайте дефґциту та не заморожуйте грошґ в зайвому товарґ. Џовний контроль фґнансґв: Cashflow длЯ власникґв.".split(/\s+/);
+const DEMO_TEXT = "Bimp: вЂњГЇГ°Г ГўГ«ВґГ­Г±ГјГЄГЁГ© Г®ГЎГ«ВґГЄ ГІГ  Г±ГЄГ«Г Г¤ Г¤Г«Гџ вЂљГЁГ°Г®ГЎГ­ГЁГ¶ГІГўГ  Вґ E-commerce. в‚¬ГўГІГ®Г¬Г ГІГЁГ·Г­ГЁГ© Г°Г®Г§Г°Г ГµГіГ­Г®ГЄ Г±Г®ГЎВґГўГ Г°ГІГ®Г±ГІВґ, ГЇГ«Г Г­ГіГўГ Г­Г­Гџ Г§Г ГЇГ Г±ВґГў ГІГ  P&L Гў Г®Г¤Г­ВґГ© Г±ГЁГ±ГІГҐГ¬Вґ. ВђГ®Г§ГіГ¬Г­ГҐ ГЇГ«Г Г­ГіГўГ Г­Г­Гџ Г§Г ГЄГіГЇВґГўГҐГ«Гј: Г§Г ГЇГ®ГЎВґГЈГ Г©ГІГҐ Г¤ГҐГґВґГ¶ГЁГІГі ГІГ  Г­ГҐ Г§Г Г¬Г®Г°Г®Г¦ГіГ©ГІГҐ ГЈГ°Г®ГёВґ Гў Г§Г Г©ГўГ®Г¬Гі ГІГ®ГўГ Г°Вґ. ВЏГ®ГўГ­ГЁГ© ГЄГ®Г­ГІГ°Г®Г«Гј ГґВґГ­Г Г­Г±ВґГў: Cashflow Г¤Г«Гџ ГўГ«Г Г±Г­ГЁГЄВґГў.".split(/\s+/);
 
 const Logo = ({ darkMode, forceLight }) => {
   const isDark = forceLight ? false : darkMode;
@@ -103,7 +103,7 @@ const DemoPlayer = () => {
           border: isPlaying ? `1px solid ${BRAND_COLOR}` : 'none' 
         }}
       >
-        {isPlaying ? <><Pause size={16} /> ‡упинити</> : <><Play size={16} fill="white" /> ‡апустити приклад</>}
+        {isPlaying ? <><Pause size={16} /> вЂЎГіГЇГЁГ­ГЁГІГЁ</> : <><Play size={16} fill="white" /> вЂЎГ ГЇГіГ±ГІГЁГІГЁ ГЇГ°ГЁГЄГ«Г Г¤</>}
       </button>
     </div>
   );
@@ -187,7 +187,7 @@ export default function App() {
         const currentWord = e.words[e.currentIndex] || "";
         let multiplier = 1;
         if (/[.!?]$/.test(currentWord)) multiplier = 2;
-        else if (/[,;:С]$/.test(currentWord)) multiplier = 1.5;
+        else if (/[,;:Г‘]$/.test(currentWord)) multiplier = 1.5;
 
         const delay = (1000 / e.wps) * multiplier;
         if (now - e.lastTick >= delay) {
@@ -285,7 +285,7 @@ export default function App() {
             style={{ backgroundColor: BRAND_COLOR }}
             className="px-6 py-3 rounded-full text-white font-bold text-sm shadow-lg hover:scale-105 active:scale-95 transition-all"
           >
-            ‚ґдкрити бґблґотеку
+            вЂљВґГ¤ГЄГ°ГЁГІГЁ ГЎВґГЎГ«ВґГ®ГІГҐГЄГі
           </button>
         </div>
       </nav>
@@ -296,13 +296,13 @@ export default function App() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 text-xs font-bold uppercase tracking-widest shadow-sm"
             style={{ backgroundColor: `${BRAND_COLOR}15`, color: BRAND_COLOR }}
           >
-            <Zap size={14} fill="currentColor" /> ђеволюцґЯ у читаннґ
+            <Zap size={14} fill="currentColor" /> ВђГҐГўГ®Г«ГѕГ¶ВґГџ Гі Г·ГЁГІГ Г­Г­Вґ
           </div>
           <h2 className="text-5xl md:text-7xl font-black leading-tight mb-8">
-            —итай улюбленґ <span style={{ color: BRAND_COLOR }}>книги</span> швидше!
+            вЂ”ГЁГІГ Г© ГіГ«ГѕГЎГ«ГҐГ­Вґ <span style={{ color: BRAND_COLOR }}>ГЄГ­ГЁГЈГЁ</span> ГёГўГЁГ¤ГёГҐ!
           </h2>
           <p className="text-lg mb-10 max-w-lg text-slate-500">
-            ЌавчґтьсЯ сприймати текст цґлими образами. Ќаш RSVP-пле№р дозволЯ№ читати сотнґ сторґнок за вечґр, не втрачаючи фокусу.
+            ВЌГ ГўГ·ВґГІГјГ±Гџ Г±ГЇГ°ГЁГ©Г¬Г ГІГЁ ГІГҐГЄГ±ГІ Г¶ВґГ«ГЁГ¬ГЁ Г®ГЎГ°Г Г§Г Г¬ГЁ. ВЌГ Гё RSVP-ГЇГ«ГҐВ№Г° Г¤Г®Г§ГўГ®Г«ГџВ№ Г·ГЁГІГ ГІГЁ Г±Г®ГІГ­Вґ Г±ГІГ®Г°ВґГ­Г®ГЄ Г§Г  ГўГҐГ·ВґГ°, Г­ГҐ ГўГІГ°Г Г·Г ГѕГ·ГЁ ГґГ®ГЄГіГ±Гі.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-12">
             <button 
@@ -310,13 +310,13 @@ export default function App() {
               style={{ backgroundColor: BRAND_COLOR }}
               className="group px-8 py-5 rounded-2xl text-white font-black text-lg flex items-center justify-center gap-3 shadow-xl hover:-translate-y-1 transition-all"
             >
-              ‘пробувати зараз <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+              вЂГЇГ°Г®ГЎГіГўГ ГІГЁ Г§Г Г°Г Г§ <ArrowRight className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
           
           <div className="p-6 rounded-3xl border bg-slate-50/30 border-dashed">
-             <div className="flex items-center gap-2 mb-2 text-xs font-bold uppercase tracking-tighter opacity-40"><Layout size={12}/> џк це працю№?</div>
-             <p className="text-sm opacity-60">‚и фокусу№тесь на видґленґй лґтерґ в центрґ, а слова змґнюютьсЯ. –е усува№ потребу в сабвокалґзацґ» та рухах очей.</p>
+             <div className="flex items-center gap-2 mb-2 text-xs font-bold uppercase tracking-tighter opacity-40"><Layout size={12}/> ЕёГЄ Г¶ГҐ ГЇГ°Г Г¶ГѕВ№?</div>
+             <p className="text-sm opacity-60">вЂљГЁ ГґГ®ГЄГіГ±ГіВ№ГІГҐГ±Гј Г­Г  ГўГЁГ¤ВґГ«ГҐГ­ВґГ© Г«ВґГІГҐГ°Вґ Гў Г¶ГҐГ­ГІГ°Вґ, Г  Г±Г«Г®ГўГ  Г§Г¬ВґГ­ГѕГѕГІГјГ±Гџ. вЂ“ГҐ ГіГ±ГіГўГ В№ ГЇГ®ГІГ°ГҐГЎГі Гў Г±Г ГЎГўГ®ГЄГ Г«ВґГ§Г Г¶ВґВ» ГІГ  Г°ГіГµГ Гµ Г®Г·ГҐГ©.</p>
           </div>
         </div>
 
@@ -326,11 +326,11 @@ export default function App() {
           <div className="grid grid-cols-2 gap-4 w-full max-w-sm">
              <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
                 <div className="text-2xl font-black" style={{ color: BRAND_COLOR }}>450+</div>
-                <div className="text-[10px] font-bold uppercase opacity-40">‘лґв за хвилину</div>
+                <div className="text-[10px] font-bold uppercase opacity-40">вЂГ«ВґГў Г§Г  ГµГўГЁГ«ГЁГ­Гі</div>
              </div>
              <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
                 <div className="text-2xl font-black" style={{ color: BRAND_COLOR }}>x3</div>
-                <div className="text-[10px] font-bold uppercase opacity-40">видкґсть навчаннЯ</div>
+                <div className="text-[10px] font-bold uppercase opacity-40">ЛњГўГЁГ¤ГЄВґГ±ГІГј Г­Г ГўГ·Г Г­Г­Гџ</div>
              </div>
           </div>
         </div>
@@ -340,24 +340,24 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
           <div className="flex flex-col items-center">
              <div className="w-16 h-16 rounded-3xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6"><FileText size={32}/></div>
-             <h3 className="text-xl font-black mb-4 uppercase">Џґдтримка PDF</h3>
-             <p className="opacity-60 text-sm px-6">‡авантажуйте будь-Якґ документи та читайте »х митт№во без зайво» реклами.</p>
+             <h3 className="text-xl font-black mb-4 uppercase">ВЏВґГ¤ГІГ°ГЁГ¬ГЄГ  PDF</h3>
+             <p className="opacity-60 text-sm px-6">вЂЎГ ГўГ Г­ГІГ Г¦ГіГ©ГІГҐ ГЎГіГ¤Гј-ГџГЄВґ Г¤Г®ГЄГіГ¬ГҐГ­ГІГЁ ГІГ  Г·ГЁГІГ Г©ГІГҐ В»Гµ Г¬ГЁГІГІВ№ГўГ® ГЎГҐГ§ Г§Г Г©ГўГ®В» Г°ГҐГЄГ«Г Г¬ГЁ.</p>
           </div>
           <div className="flex flex-col items-center">
              <div className="w-16 h-16 rounded-3xl bg-purple-100 text-purple-600 flex items-center justify-center mb-6"><Palette size={32}/></div>
-             <h3 className="text-xl font-black mb-4 uppercase">ЏерсоналґзацґЯ</h3>
-             <p className="opacity-60 text-sm px-6">Џґдлаштовуйте шрифт, кольори та темп пґд особливостґ свого зору.</p>
+             <h3 className="text-xl font-black mb-4 uppercase">ВЏГҐГ°Г±Г®Г­Г Г«ВґГ§Г Г¶ВґГџ</h3>
+             <p className="opacity-60 text-sm px-6">ВЏВґГ¤Г«Г ГёГІГ®ГўГіГ©ГІГҐ ГёГ°ГЁГґГІ, ГЄГ®Г«ГјГ®Г°ГЁ ГІГ  ГІГҐГ¬ГЇ ГЇВґГ¤ Г®Г±Г®ГЎГ«ГЁГўГ®Г±ГІВґ Г±ГўГ®ГЈГ® Г§Г®Г°Гі.</p>
           </div>
           <div className="flex flex-col items-center">
              <div className="w-16 h-16 rounded-3xl bg-amber-100 text-amber-600 flex items-center justify-center mb-6"><BookOpen size={32}/></div>
-             <h3 className="text-xl font-black mb-4 uppercase">ђозумна бґблґотека</h3>
-             <p className="opacity-60 text-sm px-6">Њи пам'Ята№мо, де ви зупинились у кожнґй книзґ. ‚сґ данґ локальнґ.</p>
+             <h3 className="text-xl font-black mb-4 uppercase">ВђГ®Г§ГіГ¬Г­Г  ГЎВґГЎГ«ВґГ®ГІГҐГЄГ </h3>
+             <p className="opacity-60 text-sm px-6">Е’ГЁ ГЇГ Г¬'ГџГІГ В№Г¬Г®, Г¤ГҐ ГўГЁ Г§ГіГЇГЁГ­ГЁГ«ГЁГ±Гј Гі ГЄГ®Г¦Г­ВґГ© ГЄГ­ГЁГ§Вґ. вЂљГ±Вґ Г¤Г Г­Вґ Г«Г®ГЄГ Г«ГјГ­Вґ.</p>
           </div>
         </div>
       </section>
 
       <footer className="py-12 text-center opacity-40 text-xs font-bold uppercase tracking-widest border-t border-slate-100">
-        © 2026 SpeedRead RSVP Reader.
+        В© 2026 SpeedRead RSVP Reader.
       </footer>
     </div>
   );
@@ -395,7 +395,7 @@ export default function App() {
             >
               <input type="file" className="hidden" onChange={handleFileUpload} />
               {isExtracting ? <RotateCcw className="animate-spin" size={18}/> : <Plus size={18}/>}
-              <span className="text-sm">„одати книгу</span>
+              <span className="text-sm">вЂћГ®Г¤Г ГІГЁ ГЄГ­ГЁГЈГі</span>
             </label>
           </div>
         </header>
@@ -403,8 +403,8 @@ export default function App() {
         {library.length === 0 ? (
           <div className="text-center py-32 border-2 border-dashed rounded-[40px] opacity-20">
              <BookOpen size={64} className="mx-auto mb-6" />
-             <p className="text-2xl font-black uppercase">‚аша бґблґотека порожнЯ</p>
-             <p className="font-bold">„одайте PDF або TXT файл, щоб почати</p>
+             <p className="text-2xl font-black uppercase">вЂљГ ГёГ  ГЎВґГЎГ«ВґГ®ГІГҐГЄГ  ГЇГ®Г°Г®Г¦Г­Гџ</p>
+             <p className="font-bold">вЂћГ®Г¤Г Г©ГІГҐ PDF Г ГЎГ® TXT ГґГ Г©Г«, Г№Г®ГЎ ГЇГ®Г·Г ГІГЁ</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -447,7 +447,7 @@ export default function App() {
           className="flex items-center gap-2 font-bold uppercase text-[10px] tracking-widest hover:opacity-70 transition-colors" 
           style={{ color: darkMode ? '#FFFFFF' : activeAccentColor }}
         >
-          <ChevronLeft size={16}/> Ѓґблґотека
+          <ChevronLeft size={16}/> ВЃВґГЎГ«ВґГ®ГІГҐГЄГ 
         </button>
         <div className={`flex items-center gap-4`}>
           <div className={`text-[10px] font-bold uppercase tracking-widest truncate max-w-[200px] ${darkMode ? 'text-white' : 'opacity-40'}`}>
@@ -480,7 +480,7 @@ export default function App() {
         >
           <div className="flex items-center justify-between px-2 h-14 relative">
             <div className="flex flex-col gap-1 w-28">
-              <span className={`text-[9px] font-black uppercase ${darkMode ? 'text-white' : ''}`} style={!darkMode ? { color: activeAccentColor } : {}}>видкґсть</span>
+              <span className={`text-[9px] font-black uppercase ${darkMode ? 'text-white' : ''}`} style={!darkMode ? { color: activeAccentColor } : {}}>ЛњГўГЁГ¤ГЄВґГ±ГІГј</span>
               <div className="flex items-center gap-2">
                 <input 
                   type="range" min="1" max="25" value={wps} 
@@ -554,7 +554,7 @@ export default function App() {
 
               <div className="text-right ml-2 min-w-[40px]">
                 <span className={`text-[10px] font-black block leading-none ${darkMode ? 'text-white' : ''}`} style={!darkMode ? { color: activeAccentColor } : {}}>{progressPercent}%</span>
-                <span className={`text-[8px] font-bold uppercase ${darkMode ? 'text-white' : 'opacity-30'}`}>Џрогрес</span>
+                <span className={`text-[8px] font-bold uppercase ${darkMode ? 'text-white' : 'opacity-30'}`}>ВЏГ°Г®ГЈГ°ГҐГ±</span>
               </div>
             </div>
           </div>
