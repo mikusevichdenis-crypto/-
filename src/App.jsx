@@ -35,7 +35,7 @@ const getORPIndex = (word) => {
   return 4;
 };
 
-const DEMO_TEXT = "Bimp: “ïðàâë´íñüêèé îáë´ê òà ñêëàä äëß ‚èðîáíèöòâà ´ E-commerce. €âòîìàòè÷íèé ðîçðàõóíîê ñîá´âàðòîñò´, ïëàíóâàííß çàïàñ´â òà P&L â îäí´é ñèñòåì´. îçóìíå ïëàíóâàííß çàêóï´âåëü: çàïîá´ãàéòå äåô´öèòó òà íå çàìîðîæóéòå ãðîø´ â çàéâîìó òîâàð´. îâíèé êîíòðîëü ô´íàíñ´â: Cashflow äëß âëàñíèê´â.".split(/\s+/);
+const DEMO_TEXT = "Bimp: Управлінський облік та склад для Виробництва і E-commerce. Автоматичний розрахунок собівартості, планування запасів та P&L в одній системі. Розумне планування закупівель: запобігайте дефіциту та не заморожуйте гроші в зайвому товарі. Повний контроль фінансів: Cashflow для власників.".split(/\s+/);
 
 const Logo = ({ darkMode, forceLight }) => {
   const isDark = forceLight ? false : darkMode;
@@ -103,7 +103,7 @@ const DemoPlayer = () => {
           border: isPlaying ? `1px solid ${BRAND_COLOR}` : 'none' 
         }}
       >
-        {isPlaying ? <><Pause size={16} /> ‡óïèíèòè</> : <><Play size={16} fill="white" /> ‡àïóñòèòè ïðèêëàä</>}
+        {isPlaying ? <><Pause size={16} /> Зупинити</> : <><Play size={16} fill="white" /> Запустити приклад</>}
       </button>
     </div>
   );
@@ -187,7 +187,7 @@ export default function App() {
         const currentWord = e.words[e.currentIndex] || "";
         let multiplier = 1;
         if (/[.!?]$/.test(currentWord)) multiplier = 2;
-        else if (/[,;:Ñ]$/.test(currentWord)) multiplier = 1.5;
+        else if (/[,;:—]$/.test(currentWord)) multiplier = 1.5;
 
         const delay = (1000 / e.wps) * multiplier;
         if (now - e.lastTick >= delay) {
@@ -285,7 +285,7 @@ export default function App() {
             style={{ backgroundColor: BRAND_COLOR }}
             className="px-6 py-3 rounded-full text-white font-bold text-sm shadow-lg hover:scale-105 active:scale-95 transition-all"
           >
-            ‚´äêðèòè á´áë´îòåêó
+            Відкрити бібліотеку
           </button>
         </div>
       </nav>
@@ -296,13 +296,13 @@ export default function App() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 text-xs font-bold uppercase tracking-widest shadow-sm"
             style={{ backgroundColor: `${BRAND_COLOR}15`, color: BRAND_COLOR }}
           >
-            <Zap size={14} fill="currentColor" /> åâîëþö´ß ó ÷èòàíí´
+            <Zap size={14} fill="currentColor" /> Революція у читанні
           </div>
           <h2 className="text-5xl md:text-7xl font-black leading-tight mb-8">
-            —èòàé óëþáëåí´ <span style={{ color: BRAND_COLOR }}>êíèãè</span> øâèäøå!
+            Читай улюблені <span style={{ color: BRAND_COLOR }}>книги</span> швидше!
           </h2>
           <p className="text-lg mb-10 max-w-lg text-slate-500">
-            àâ÷´òüñß ñïðèéìàòè òåêñò ö´ëèìè îáðàçàìè. àø RSVP-ïëå¹ð äîçâîëß¹ ÷èòàòè ñîòí´ ñòîð´íîê çà âå÷´ð, íå âòðà÷àþ÷è ôîêóñó.
+            Навчіться сприймати текст цілими образами. Наш RSVP-плеєр дозволяє читати сотні сторінок за вечір, не втрачаючи фокусу.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-12">
             <button 
@@ -310,13 +310,13 @@ export default function App() {
               style={{ backgroundColor: BRAND_COLOR }}
               className="group px-8 py-5 rounded-2xl text-white font-black text-lg flex items-center justify-center gap-3 shadow-xl hover:-translate-y-1 transition-all"
             >
-              ‘ïðîáóâàòè çàðàç <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+              Спробувати зараз <ArrowRight className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
           
           <div className="p-6 rounded-3xl border bg-slate-50/30 border-dashed">
-             <div className="flex items-center gap-2 mb-2 text-xs font-bold uppercase tracking-tighter opacity-40"><Layout size={12}/> Ÿê öå ïðàöþ¹?</div>
-             <p className="text-sm opacity-60">‚è ôîêóñó¹òåñü íà âèä´ëåí´é ë´òåð´ â öåíòð´, à ñëîâà çì´íþþòüñß. –å óñóâà¹ ïîòðåáó â ñàáâîêàë´çàö´» òà ðóõàõ î÷åé.</p>
+             <div className="flex items-center gap-2 mb-2 text-xs font-bold uppercase tracking-tighter opacity-40"><Layout size={12}/> Як це працює?</div>
+             <p className="text-sm opacity-60">Ви фокусуєтесь на виділеній літері в центрі, а слова змінюються. Це усуває потребу в сабвокалізації та рухах очей.</p>
           </div>
         </div>
 
@@ -326,11 +326,11 @@ export default function App() {
           <div className="grid grid-cols-2 gap-4 w-full max-w-sm">
              <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
                 <div className="text-2xl font-black" style={{ color: BRAND_COLOR }}>450+</div>
-                <div className="text-[10px] font-bold uppercase opacity-40">‘ë´â çà õâèëèíó</div>
+                <div className="text-[10px] font-bold uppercase opacity-40">Слів за хвилину</div>
              </div>
              <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
                 <div className="text-2xl font-black" style={{ color: BRAND_COLOR }}>x3</div>
-                <div className="text-[10px] font-bold uppercase opacity-40">˜âèäê´ñòü íàâ÷àííß</div>
+                <div className="text-[10px] font-bold uppercase opacity-40">Швидкість навчання</div>
              </div>
           </div>
         </div>
@@ -340,18 +340,18 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
           <div className="flex flex-col items-center">
              <div className="w-16 h-16 rounded-3xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6"><FileText size={32}/></div>
-             <h3 className="text-xl font-black mb-4 uppercase">´äòðèìêà PDF</h3>
-             <p className="opacity-60 text-sm px-6">‡àâàíòàæóéòå áóäü-ßê´ äîêóìåíòè òà ÷èòàéòå »õ ìèòò¹âî áåç çàéâî» ðåêëàìè.</p>
+             <h3 className="text-xl font-black mb-4 uppercase">Підтримка PDF</h3>
+             <p className="opacity-60 text-sm px-6">Завантажуйте будь-які документи та читайте їх миттєво без зайвої реклами.</p>
           </div>
           <div className="flex flex-col items-center">
              <div className="w-16 h-16 rounded-3xl bg-purple-100 text-purple-600 flex items-center justify-center mb-6"><Palette size={32}/></div>
-             <h3 className="text-xl font-black mb-4 uppercase">åðñîíàë´çàö´ß</h3>
-             <p className="opacity-60 text-sm px-6">´äëàøòîâóéòå øðèôò, êîëüîðè òà òåìï ï´ä îñîáëèâîñò´ ñâîãî çîðó.</p>
+             <h3 className="text-xl font-black mb-4 uppercase">Персоналізація</h3>
+             <p className="opacity-60 text-sm px-6">Підлаштовуйте шрифт, кольори та темп під особливості свого зору.</p>
           </div>
           <div className="flex flex-col items-center">
              <div className="w-16 h-16 rounded-3xl bg-amber-100 text-amber-600 flex items-center justify-center mb-6"><BookOpen size={32}/></div>
-             <h3 className="text-xl font-black mb-4 uppercase">îçóìíà á´áë´îòåêà</h3>
-             <p className="opacity-60 text-sm px-6">Œè ïàì'ßòà¹ìî, äå âè çóïèíèëèñü ó êîæí´é êíèç´. ‚ñ´ äàí´ ëîêàëüí´.</p>
+             <h3 className="text-xl font-black mb-4 uppercase">Розумна бібліотека</h3>
+             <p className="opacity-60 text-sm px-6">Ми пам'ятаємо, де ви зупинились у кожній книзі. Всі дані локальні.</p>
           </div>
         </div>
       </section>
@@ -395,7 +395,7 @@ export default function App() {
             >
               <input type="file" className="hidden" onChange={handleFileUpload} />
               {isExtracting ? <RotateCcw className="animate-spin" size={18}/> : <Plus size={18}/>}
-              <span className="text-sm">„îäàòè êíèãó</span>
+              <span className="text-sm">Додати книгу</span>
             </label>
           </div>
         </header>
@@ -403,8 +403,8 @@ export default function App() {
         {library.length === 0 ? (
           <div className="text-center py-32 border-2 border-dashed rounded-[40px] opacity-20">
              <BookOpen size={64} className="mx-auto mb-6" />
-             <p className="text-2xl font-black uppercase">‚àøà á´áë´îòåêà ïîðîæíß</p>
-             <p className="font-bold">„îäàéòå PDF àáî TXT ôàéë, ùîá ïî÷àòè</p>
+             <p className="text-2xl font-black uppercase">Ваша бібліотека порожня</p>
+             <p className="font-bold">Додайте PDF або TXT файл, щоб почати</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -447,7 +447,7 @@ export default function App() {
           className="flex items-center gap-2 font-bold uppercase text-[10px] tracking-widest hover:opacity-70 transition-colors" 
           style={{ color: darkMode ? '#FFFFFF' : activeAccentColor }}
         >
-          <ChevronLeft size={16}/> ´áë´îòåêà
+          <ChevronLeft size={16}/> Бібліотека
         </button>
         <div className={`flex items-center gap-4`}>
           <div className={`text-[10px] font-bold uppercase tracking-widest truncate max-w-[200px] ${darkMode ? 'text-white' : 'opacity-40'}`}>
@@ -480,7 +480,7 @@ export default function App() {
         >
           <div className="flex items-center justify-between px-2 h-14 relative">
             <div className="flex flex-col gap-1 w-28">
-              <span className={`text-[9px] font-black uppercase ${darkMode ? 'text-white' : ''}`} style={!darkMode ? { color: activeAccentColor } : {}}>˜âèäê´ñòü</span>
+              <span className={`text-[9px] font-black uppercase ${darkMode ? 'text-white' : ''}`} style={!darkMode ? { color: activeAccentColor } : {}}>Швидкість</span>
               <div className="flex items-center gap-2">
                 <input 
                   type="range" min="1" max="25" value={wps} 
@@ -554,7 +554,7 @@ export default function App() {
 
               <div className="text-right ml-2 min-w-[40px]">
                 <span className={`text-[10px] font-black block leading-none ${darkMode ? 'text-white' : ''}`} style={!darkMode ? { color: activeAccentColor } : {}}>{progressPercent}%</span>
-                <span className={`text-[8px] font-bold uppercase ${darkMode ? 'text-white' : 'opacity-30'}`}>ðîãðåñ</span>
+                <span className={`text-[8px] font-bold uppercase ${darkMode ? 'text-white' : 'opacity-30'}`}>Прогрес</span>
               </div>
             </div>
           </div>
