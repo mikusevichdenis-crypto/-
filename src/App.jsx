@@ -118,7 +118,7 @@ export default function App() {
   
   const [isPlayingUI, setIsPlayingUI] = useState(false);
   const [wps, setWps] = useState(7); 
-  const [fontSize, setFontSize] = useState(60); // Трохи менше дефолтне для мобайлу
+  const [fontSize, setFontSize] = useState(60); 
   const [focusColor, setFocusColor] = useState('custom-brand');
   const [progressPercent, setProgressPercent] = useState(0);
   const [isColorPickerOpen, setIsColorPickerOpen] = useState(false);
@@ -402,17 +402,34 @@ export default function App() {
         <div className="w-8"></div>
       </div>
 
-      {/* Reader Area */}
-      <div className="relative w-full h-[40vh] flex justify-center items-center select-none" 
+      {/* Reader Area - ВИПРАВЛЕНО ДЛЯ МОБАЙЛУ */}
+      <div className="relative w-full h-[40vh] flex flex-col justify-center items-center select-none overflow-hidden" 
            style={{ fontSize: `clamp(30px, ${fontSize}px, 15vw)` }}>
-        <div className="absolute h-24 md:h-32 w-[2px] left-1/2 -translate-x-1/2 flex flex-col justify-between py-1">
+        
+        {/* Напрямні лінії по центру екрана */}
+        <div className="absolute h-24 md:h-32 w-[2px] left-1/2 -translate-x-1/2 flex flex-col justify-between py-1 z-0">
           <div className="w-4 md:w-6 h-1 -translate-x-1/2 rounded-full bg-blue-500/30"></div>
           <div className="w-4 md:w-6 h-1 -translate-x-1/2 rounded-full bg-blue-500/30"></div>
         </div>
-        <div className="flex relative font-mono font-bold tracking-tighter">
-          <div ref={wordBeforeRef} className="absolute right-full text-right whitespace-nowrap opacity-30"></div>
-          <div ref={wordTargetRef} className={focusColor === 'custom-brand' ? '' : focusColor} style={getFocusStyle()}></div>
-          <div ref={wordAfterRef} className="absolute left-full text-left whitespace-nowrap opacity-30"></div>
+
+        {/* Контейнер слова з жорсткою центровкою */}
+        <div className="relative flex font-mono font-bold tracking-tighter w-full items-center">
+          {/* Ліва частина слова */}
+          <div className="flex-1 flex justify-end">
+            <span ref={wordBeforeRef} className="text-right whitespace-nowrap opacity-30"></span>
+          </div>
+
+          {/* Центральна фокус-буква (Статичний центр) */}
+          <div 
+            ref={wordTargetRef} 
+            className={`min-w-[0.6em] text-center z-10 ${focusColor === 'custom-brand' ? '' : focusColor}`} 
+            style={getFocusStyle()}
+          ></div>
+
+          {/* Права частина слова */}
+          <div className="flex-1 flex justify-start">
+            <span ref={wordAfterRef} className="text-left whitespace-nowrap opacity-30"></span>
+          </div>
         </div>
       </div>
 
@@ -429,7 +446,7 @@ export default function App() {
           {/* Main Control Row */}
           <div className="flex flex-wrap items-center justify-between gap-4">
             
-            {/* Speed Control (Adaptive width) */}
+            {/* Speed Control */}
             <div className="flex flex-col gap-1 w-full md:w-32 order-3 md:order-1">
               <span className="text-[9px] font-black uppercase opacity-50">Швидкість</span>
               <div className="flex items-center gap-2">
@@ -478,7 +495,7 @@ export default function App() {
                 </button>
                 
                 {isColorPickerOpen && (
-                  <div className="absolute bottom-full mb-4 right-0 flex gap-2 p-2 bg-white dark:bg-slate-800 rounded-xl shadow-2xl border border-slate-100 animate-in fade-in zoom-in">
+                  <div className="absolute bottom-full mb-4 right-0 flex gap-2 p-2 bg-white dark:bg-slate-800 rounded-xl shadow-2xl border border-slate-100 animate-in fade-in zoom-in z-20">
                     {colors.map(c => (
                       <button 
                         key={c.name} 
